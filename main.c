@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 #include "constantes.h"
-#include "funcoes_auxiliares.h"
+#include "FuncAux_ProgF.c"
 
 
 int main()
@@ -24,6 +24,7 @@ int main()
         {
         case '1':
             //menu Bicicletas
+            printf("/n/nAQUI!/n/n");
             do
             {
                 opcaoMenuBicicletas = menuBicicletas();

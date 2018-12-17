@@ -2,5 +2,5 @@
 
 int MenuPrincipal(void){
     int M;
-    printf("---------------Menu Principal")
+    printf("---------------Menu Principal");
 }

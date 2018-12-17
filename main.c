@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 #include "constantes.h"
-#include "FuncAux_ProgF.c"
+#include "FuncAux_ProgF.h"
 
 
 int main()
@@ -22,7 +22,7 @@ int main()
 
         switch(opcaoMenuPrincipal)
         {
-        case '1':
+        case 1:
             //menu Bicicletas
             printf("/n/nAQUI!/n/n");
             do
@@ -32,26 +32,26 @@ int main()
             while(opcaoMenuBicicletas != 0);
 
             break;
-        case '2':
+        case 2:
             //Menu Utentes
             do
             {
                 opcaoMenuUtentes = menuUtentes();
             }while(opcaoMenuUtentes != 0);
             break;
-        case '3':
+        case 3:
             //Menu Emprestimos
             menuEmprestimos();
             break;
-        case '4':
+        case 4:
             //Menu Lista de Espera
 
             break;
-        case '5':
+        case 5:
             //MenuFicheiros
             menuFicheiros();
             break;
-        case '0':
+        case 0:
             //Sair;
             printf("/n/nAdeus!!!");
             break;

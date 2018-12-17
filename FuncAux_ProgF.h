@@ -3,7 +3,7 @@
 
 #include "constantes.h"
 
-int menuPrincipal(void);
+int menuPrincipal();
 int menuBicicletas(void);
 int menuUtentes(void);
 int menuEmprestimos(void);

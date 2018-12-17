@@ -1,17 +1,69 @@
+/*
+    João Carreira - nº 2182317
+    Luís Patrício - nº 2162357
+    Projecto Programação I - Gestão de Bicicletas no IPL
+    ©2018-19 - Engenharia Informática - ESTG, IPLeiria
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "constantes.h"
+#include "FuncAux_ProgF.c"
+
+
 int main()
 {
-    int menu, subMenuBic;
-    switch(menu){
-        case '1':
-            do{
-                switch(subMenuBic){
+    int opcaoMenuPrincipal, opcaoMenuBicicletas, opcaoMenuUtentes, opcaoMenuEmprestimos, opcaoMenuListaEspera, opcaoMenuFicheiros;
 
-                }
-            }while(subMenuBic != 0);
+    // Chama Menu Principal
+    do
+    {
+        opcaoMenuPrincipal=menuPrincipal();
+
+        switch(opcaoMenuPrincipal)
+        {
+        case '1':
+            //menu Bicicletas
+            printf("/n/nAQUI!/n/n");
+            do
+            {
+                opcaoMenuBicicletas = menuBicicletas();
+            }
+            while(opcaoMenuBicicletas != 0);
+
+            break;
+        case '2':
+            //Menu Utentes
+            do
+            {
+                opcaoMenuUtentes = menuUtentes();
+            }while(opcaoMenuUtentes != 0);
+            break;
+        case '3':
+            //Menu Emprestimos
+            menuEmprestimos();
+            break;
+        case '4':
+            //Menu Lista de Espera
+
+            break;
+        case '5':
+            //MenuFicheiros
+            menuFicheiros();
+            break;
+        case '0':
+            //Sair;
+            printf("/n/nAdeus!!!");
+            break;
+            /*
+            default:
+                printf("/nOpcao Errada!");
+            */
+        }
     }
+    while(opcaoMenuPrincipal != 0);
+
 
     return 0;
 }
+

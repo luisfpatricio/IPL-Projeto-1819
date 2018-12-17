@@ -36,6 +36,7 @@
 		</Unit>
 		<Unit filename="FuncAux_ProgF.h" />
 		<Unit filename="STRUCTS_PF.h" />
+		<Unit filename="constantes.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

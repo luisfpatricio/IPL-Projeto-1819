@@ -24,7 +24,6 @@ int main()
         {
         case 1:
             //menu Bicicletas
-            printf("/n/nAQUI!/n/n");
             do
             {
                 opcaoMenuBicicletas = menuBicicletas();
@@ -41,15 +40,25 @@ int main()
             break;
         case 3:
             //Menu Emprestimos
-            menuEmprestimos();
+            do
+            {
+                opcaoMenuEmprestimos = menuEmprestimos();
+            }while(opcaoMenuEmprestimos != 0);
             break;
         case 4:
             //Menu Lista de Espera
-
+            do
+            {
+                printf("teste");
+                //opcaoMenuListaEspera = menuListaEspera();
+            }while(opcaoMenuListaEspera != 0);
             break;
         case 5:
             //MenuFicheiros
-            menuFicheiros();
+            do
+            {
+                opcaoMenuFicheiros = menuFicheiros();
+            }while(opcaoMenuFicheiros != 0);
             break;
         case 0:
             //Sair;

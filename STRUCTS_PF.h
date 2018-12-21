@@ -8,38 +8,43 @@ typedef struct{
     int dia;
     int hora;
     int minuto;
-}tipoMomento;
+}tipoData;
 
 //Estrutura Devolucao Emprestimo
 typedef struct{
-    tipoMomento instanteD;
-    float dPERCORRIDA;
-}tipoDevolucao;
+    tipoData instanteDistancia;
+    float distanciaPercorrida;
+}tipoDevolucaoEmprestimo;
 
 //Estrutura Bicicleta
 typedef struct{
-    char designacao[10];
-    char modelo[25];
-    char estado[12];
-    char campus[12];
-}Bicicleta;
+    char designacao[MAX_STRING];
+    char modelo[MAX_STRING];
+    //char estado[12];
+    //char campus[12];
+    int estado;
+    int campus;
+}tipoBicicleta;
 
 //Estrutura Utente
 typedef struct{
-    char codigo[10];
-    char nome[25];
+    int codigo;
+    char nome[MAX_STRING];
     int telefone;
-    char tipoU[25];
-}Utente;
+    char tipo[MAX_STRING];
+}tipoUtente;
 
 //Estrutura Emprestimo
 typedef struct{
-    int numeroR;
-    char codigoU[10];
-    char designacaoB[10];
-    char campusO[12];
-    char campusD[12];
-    tipoMomento instanteR;
-    tipoDevolucao dadosdevolvidos;
-}Emprestimo;
+    int numeroRegisto;
+    //char codigoUtente[10];
+    //tipoUtente
+    //char designacaoBicicleta[10];
+    char campusOrigem[12];
+    char campusDestino[12];
+    tipoData instanteR;
+    tipoDevolucaoEmprestimo dadosdevolvidos;
+}tipoEmprestimo;
+
+
 #endif // STRUCTS_PF_H_INCLUDED

@@ -8,16 +8,16 @@
 
 
 // Menu Principal
-int menuPrincipal(int *qtdUtentes, int *qtdEmprestimos, float *qtdDistanciaPercorrida)
+int menuPrincipal(int* qtdUtentes, int* qtdEmprestimos, float* qtdDistanciaPercorrida, int* qtdListaEspera)
 {
     int opcao;
 
     //system("cls");
     printf("\n************************** Menu Principal **************************\n\n");
-    printf("Quantidade de Utentes: %d\n");
-    printf("Quantidade de Emprestimos Registados: %d\n");
-    printf("Distancia Total Percorrida: %.3f\n");
-    printf("Quantidade de Pedidos em Lista de Espera: %d\n\n");
+    printf("Quantidade de Utentes: %d\n", *qtdUtentes);
+    printf("Quantidade de Emprestimos Registados: %d\n", *qtdEmprestimos);
+    printf("Distancia Total Percorrida: %.3f\n", *qtdDistanciaPercorrida);
+    printf("Quantidade de Pedidos em Lista de Espera: %d\n\n", *qtdListaEspera);
     printf("\t1 - Bicicletas\n");
     printf("\t2 - Utentes\n");
     printf("\t3 - Emprestimos\n");

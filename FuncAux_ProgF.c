@@ -93,7 +93,7 @@ void lerString(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], int 
 }
 
 
-/*
+
 tipoData lerData(void)
 {
     tipoData data;
@@ -129,7 +129,7 @@ tipoData lerData(void)
 
     return data;
 }
-*/
+
 
 
 void limpaBufferStdin(void)

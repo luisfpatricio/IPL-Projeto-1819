@@ -4,8 +4,8 @@
 #include "constantes.h"
 
 //Menus e SubMenus
-int menuPrincipal(int *qtdUtentes, int *qtdEmprestimos, float *qtdDistanciaPercorrida);
-int menuBicicletas(int *qtdBicicletas, int *qtdEmprestimos, float *qtdDistanciaPercorrida);
+int menuPrincipal(int* qtdUtentes, int* qtdEmprestimos, float* qtdDistanciaPercorrida, int* qtdListaEspera);
+int menuBicicletas(int* qtdBicicletas, int* qtdEmprestimos, float* qtdDistanciaPercorrida);
 int menuUtentes(void);
 int menuEmprestimos(void);
 int menuEstatisticas(void);

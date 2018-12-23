@@ -28,7 +28,7 @@ int main()
     // Chama Menu Principal
     do
     {
-        opcaoMenuPrincipal=menuPrincipal(&qtdUtentes, &qtdEmprestimos, &qtdDistanciaPercorrida);
+        opcaoMenuPrincipal=menuPrincipal(&qtdUtentes, &qtdEmprestimos, &qtdDistanciaPercorrida, &qtdListaEspera);
 
         switch(opcaoMenuPrincipal)
         {
@@ -48,8 +48,10 @@ int main()
                     // Consultar Bicicletas
 
                     break;
-                //Listar Bicicletas
+
                 case 3:
+                    //Listar Bicicletas
+                    listarBicicletas(vetorBicicletas, qtdBicicletas);
 
                     break;
 

@@ -46,6 +46,7 @@ int main()
                     break;
                 case 2:
                     // Consultar Bicicletas
+                    procuraBicicleta(vetorBicicletas, qtdBicicletas);
 
                     break;
 

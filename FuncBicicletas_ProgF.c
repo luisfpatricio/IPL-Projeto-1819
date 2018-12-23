@@ -17,6 +17,7 @@ void inserirBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBi
         {
             printf("\n\n");
             lerString("\nDesignacao: ", vetorBicicletas[*qtdBicicletas].designacao,MAX_STRING);
+            limpaBufferStdin();
             posicao = procuraBicicleta(vetorBicicletas, *qtdBicicletas, vetorBicicletas[*qtdBicicletas].designacao);
 
             if(posicao == -1)
@@ -193,5 +194,3 @@ else
 
 
 // Eliminar Bicicletas
-
-

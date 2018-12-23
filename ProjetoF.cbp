@@ -35,6 +35,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="FuncAux_ProgF.h" />
+		<Unit filename="FuncBicicletas_ProgF.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="FuncBicicletas_ProgF.h" />
+		<Unit filename="FuncMenus_ProgF.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="FuncMenus_ProgF.h" />
 		<Unit filename="STRUCTS_PF.h" />
 		<Unit filename="constantes.h" />
 		<Unit filename="main.c">

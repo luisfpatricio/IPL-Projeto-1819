@@ -21,6 +21,7 @@ int main()
     //contadores
     int qtdBicicletas=0, qtdUtentes=0, qtdEmprestimos=0, qtdListaEspera=0;
     float qtdDistanciaPercorrida = 0.0;
+    char compString[MAX_STRING];
 
     //Declarar variavel "Tipo estrutura"
     tipoBicicleta vetorBicicletas[MAX_BICICLETAS];
@@ -46,13 +47,23 @@ int main()
                     break;
                 case 2:
                     // Consultar Bicicletas
-                    procuraBicicleta(vetorBicicletas, qtdBicicletas);
 
+                    //posicao = procuraBicicleta(vetorBicicletas, *qtdBicicletas, vetorBicicletas[*qtdBicicletas].designacao);
+
+                    if(qtdBicicletas==0)
+                    {
+                        printf("\nNao existe Bicicletas disponiveis\n");
+                    }
+                    else
+                    {
+                        lerString("\nDesignacao: ", compString[MAX_STRING],MAX_STRING);
+                        procuraBicicleta(vetorBicicletas, qtdBicicletas, compString[MAX_STRING]);
+                    }
                     break;
 
                 case 3:
                     //Listar Bicicletas
-                    listarBicicletas(vetorBicicletas, qtdBicicletas);
+                    listarBicicletas(vetorBicicletas, &qtdBicicletas);
 
                     break;
 

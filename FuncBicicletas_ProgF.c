@@ -11,14 +11,25 @@ void inserirBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBi
 {
     int posicao;
 
-    if(*qtdBicicletas < MAX_BICICLETAS)
+    if(*qtdBicicletas == MAX_BICICLETAS)
+    {
+        printf("\nAtencao: Antigimos o numero maximo de Bicicletas\n");
+    }
+    else
     {
         do
         {
             printf("\n\n");
+            //scanf("%s", vetorBicicletas[0].designacao);
             lerString("\nDesignacao: ", vetorBicicletas[*qtdBicicletas].designacao,MAX_STRING);
-            limpaBufferStdin();
+            //printf("\n Insira a designacao : ");
+            //lerString(vetorBicicletas[0].designacao, MAX_STRING);
+            //lerString("\nDesignacao: ", vetorBicicletas[0].designacao,MAX_STRING);
+
+            printf("\n qtdBicicletas: %d",*qtdBicicletas);
             posicao = procuraBicicleta(vetorBicicletas, *qtdBicicletas, vetorBicicletas[*qtdBicicletas].designacao);
+
+            //vetorBicicletas[0].designacao = "1111"
 
             if(posicao == -1)
             {
@@ -33,10 +44,6 @@ void inserirBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBi
             }
         }
         while(posicao != -1);
-    }
-    else
-    {
-        printf("\nAtencao: Antigimos o numero maximo de Bicicletas\n");
     }
 }
 
@@ -80,9 +87,10 @@ void ordenarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBic
 
 
 // Listar Bicicletas
-void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBicicletas)
+void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBicicletas)
 {
-    int i;
+    int i=0;
+    int a;
 
     if(qtdBicicletas == 0)
     {
@@ -90,13 +98,24 @@ void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBici
     }
     else
     {
+       for( a = 0; a < *qtdBicicletas; a++ ){
+            printf("\n\nBicicleta[%d]", a);
+            printf("\n\tDesignacao: %s", vetorBicicletas[a].designacao);
+            printf("\n\tModelo: %s", vetorBicicletas[a].modelo);
+            printf("\n\tEstado: %d", vetorBicicletas[a].estado);
+            printf("\n\tCampus: %d", vetorBicicletas[a].campus);
+       }
+
         printf("\n\n---------- Lista de todas as Bicicletas -----------\n\n");
-        for(i=0; i<qtdBicicletas; i++);
+        /*for(a=0; i<*qtdBicicletas; a++);
         {
-            printf("\nDesignacao: %s", vetorBicicletas[i].designacao);
-            printf("\nModelo: %s", vetorBicicletas[i].modelo);
-            printf("\nEstado: %d", vetorBicicletas[i].estado);
-            printf("\nCampus: %d", vetorBicicletas[i].campus);
+            //i=i-1;
+            printf("\n qtdBicicletas: %d",*qtdBicicletas);
+            printf("\nBicicleta[%d]", a);
+            printf("\nDesignacao: %s", vetorBicicletas[a].designacao);
+            printf("\nModelo: %s", vetorBicicletas[a].modelo);
+            printf("\nEstado: %d", vetorBicicletas[a].estado);
+            printf("\nCampus: %d", vetorBicicletas[a].campus);*/
 
             /*
             if(vetorBicicletas[i].estado == 1)
@@ -137,8 +156,8 @@ void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBici
                     }
                 }
             }
-        */
-        }
+            */
+        //}
     }
 }
 

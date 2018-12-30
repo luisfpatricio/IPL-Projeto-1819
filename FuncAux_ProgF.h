@@ -9,7 +9,7 @@ float lerFloat(char mensagem[MAX_STRING], float minimo, float maximo);
 void lerString(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], int maximoCaracteres);
 tipoData lerData(void);
 void limpaBufferStdin(void);
-
+void pausa();
 
 //tipoData lerData(void);
 

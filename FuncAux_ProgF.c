@@ -141,3 +141,9 @@ void limpaBufferStdin(void)
     }
     while (chr != '\n' && chr != EOF);
 }
+
+void pausa()
+{
+    printf("\n\n (Prima ENTER para continuar...)");
+    getchar();
+}

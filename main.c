@@ -48,17 +48,6 @@ int main()
                 case 2:
                     // Consultar Bicicletas
 
-                    //posicao = procuraBicicleta(vetorBicicletas, *qtdBicicletas, vetorBicicletas[*qtdBicicletas].designacao);
-
-                    if(qtdBicicletas==0)
-                    {
-                        printf("\nNao existe Bicicletas disponiveis\n");
-                    }
-                    else
-                    {
-                        lerString("\nDesignacao: ", compString[MAX_STRING],MAX_STRING);
-                        procuraBicicleta(vetorBicicletas, qtdBicicletas, compString[MAX_STRING]);
-                    }
                     break;
 
                 case 3:

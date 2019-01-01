@@ -23,7 +23,7 @@ int menuPrincipal(int* qtdUtentes, int* qtdEmprestimos, float* qtdDistanciaPerco
     printf("\t3 - Emprestimos\n");
     printf("\t4 - Lista de Espera\n");
     printf("\t5 - Ficheiros\n");
-    printf("\t0 - Sair\n");
+    printf("\n0 - Sair\n");
 
     opcao = lerInteiro("\n\t\tIndique a opcao:", 0, 5);
 

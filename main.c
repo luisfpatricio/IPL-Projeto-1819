@@ -47,6 +47,7 @@ int main()
                     break;
                 case 2:
                     // Consultar Bicicletas
+                    consultarBicicleta(vetorBicicletas, &qtdBicicletas);
 
                     break;
 

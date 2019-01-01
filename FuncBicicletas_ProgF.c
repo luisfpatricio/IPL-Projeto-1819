@@ -83,7 +83,7 @@ void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBic
     int i;
     int a;
 
-    if(qtdBicicletas == 0)
+    if(*qtdBicicletas == 0)
     {
         printf("\n\nNao Existem Bicicletas Inseridas\n");
     }
@@ -138,89 +138,49 @@ void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBic
                     }
                 }
             }
-
         }
-
-        //printf("\n\n---------- Lista de todas as Bicicletas -----------\n\n");
-        /*for(a=0; a<*qtdBicicletas; a++);
-        {
-            //i=i-1;
-            printf("\n qtdBicicletas: %d",*qtdBicicletas);
-            printf("\nBicicleta[%d]", a);
-            printf("\nDesignacao: %s", vetorBicicletas[a].designacao);
-            printf("\nModelo: %s", vetorBicicletas[a].modelo);
-            printf("\nEstado: %d", vetorBicicletas[a].estado);
-            printf("\nCampus: %d", vetorBicicletas[a].campus);*/
-
-        /*
-        if(vetorBicicletas[i].estado == 1)
-        {
-
-        }
-        else
-        {
-            if(vetorBicicletas[i].estado == 2)
-            {
-                printf(" - Emprestada");
-            }
-            else
-            {
-                printf(" - Avariada");
-            }
-        }
-        printf("\Modelo: %d", vetorBicicletas[i].modelo);
-        if(vetorBicicletas[i].modelo == 1)
-        {
-            printf(" - Residencias");
-        }
-        else
-        {
-            if(vetorBicicletas[i].modelo == 2)
-            {
-                printf(" - Campus1");
-            }
-            else
-            {
-                if(vetorBicicletas[i].modelo == 3)
-                {
-                    printf(" - Campus2");
-                }
-                else
-                {
-                    printf(" - Campus5");
-                }
-            }
-        }
-        */
-        //}
-        pausa();
     }
+    pausa();
 }
 
 // Consultar Bicicletas
 
-void consultarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBicicletas, comparaString[MAX_STRING])
+void consultarBicicleta(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBicicletas)
 {
+    int posicao, a=0;
+    char comparaDesignacao[MAX_STRING];
 
-    if(qtdBicicletas == 0)
+    if(*qtdBicicletas == 0)
     {
         printf("\nNao Existem Bicicletas inseridas!\n\n");
     }
     else
     {
         printf("\n\t\t\tConsultar Bicicletas\n");
-        lerString("\nDesignacao: ", vetorBicicletas[*qtdBicicletas].designacao,MAX_STRING);
-        posicao = procuraBicicleta(vetorBicicletas, *qtdBicicletas, vetorBicicletas[*qtdBicicletas].designacao);
+        //lerString("\nDesignacao: ", vetorBicicletas[*qtdBicicletas].designacao,MAX_STRING);
+        //posicao = procuraBicicleta(vetorBicicletas, *qtdBicicletas, vetorBicicletas[*qtdBicicletas].designacao);
+        lerString("\nDesignacao: ", comparaDesignacao,MAX_STRING);
+        posicao = procuraBicicleta(vetorBicicletas, *qtdBicicletas, comparaDesignacao);
 
-        if(posicao != -1)
+        if(posicao == -1)
         {
-            printf("\nDesignacao nao encontrada!\n")
+            printf("\nDesignacao nao encontrada!\n");
         }
         else
         {
+            posicao = a;
 
+            printf("\nPosicao: %d", posicao);
+            pausa();
+
+            printf("\n\nBicicleta[%d]", posicao);
+            printf("\n\tDesignacao: %s", vetorBicicletas[posicao].designacao);
+            printf("\n\tModelo: %s", vetorBicicletas[posicao].modelo);
+            printf("\n\tEstado: %d", vetorBicicletas[posicao].estado);
+            printf("\n\tCampus: %d", vetorBicicletas[posicao].campus);
         }
     }
+    pausa();
 }
 
 // Eliminar Bicicletas

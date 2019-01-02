@@ -147,7 +147,7 @@ void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBic
 
 void consultarBicicleta(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBicicletas)
 {
-    int posicao, a=0;
+    int posicao;
     char comparaDesignacao[MAX_STRING];
 
     if(*qtdBicicletas == 0)
@@ -157,8 +157,6 @@ void consultarBicicleta(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdB
     else
     {
         printf("\n\t\t\tConsultar Bicicletas\n");
-        //lerString("\nDesignacao: ", vetorBicicletas[*qtdBicicletas].designacao,MAX_STRING);
-        //posicao = procuraBicicleta(vetorBicicletas, *qtdBicicletas, vetorBicicletas[*qtdBicicletas].designacao);
         lerString("\nDesignacao: ", comparaDesignacao,MAX_STRING);
         posicao = procuraBicicleta(vetorBicicletas, *qtdBicicletas, comparaDesignacao);
 
@@ -168,11 +166,11 @@ void consultarBicicleta(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdB
         }
         else
         {
-            posicao = a;
-
+            // Teste Ver posicao
+            /*
             printf("\nPosicao: %d", posicao);
             pausa();
-
+            */
             printf("\n\nBicicleta[%d]", posicao);
             printf("\n\tDesignacao: %s", vetorBicicletas[posicao].designacao);
             printf("\n\tModelo: %s", vetorBicicletas[posicao].modelo);

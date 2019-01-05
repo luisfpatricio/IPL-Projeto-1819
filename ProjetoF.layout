@@ -10,25 +10,13 @@
 			<Collapse line="66" />
 		</Folding>
 	</File>
-	<File name="FuncAux_ProgF.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="FuncBicicletas_ProgF.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="262" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="FuncBicicletas_ProgF.c" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5128" topLine="88" />
+			<Cursor1 position="5055" topLine="114" />
 		</Cursor>
 		<Folding>
 			<Collapse line="10" />
-			<Collapse line="42" />
-			<Collapse line="58" />
 		</Folding>
-	</File>
-	<File name="FuncMenus_ProgF.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="853" topLine="0" />
-		</Cursor>
 	</File>
 	<File name="FuncBicicletas_ProgF.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
@@ -40,9 +28,14 @@
 			<Cursor1 position="471" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="STRUCTS_PF.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="183" topLine="0" />
+			<Cursor1 position="1580" topLine="28" />
+		</Cursor>
+	</File>
+	<File name="FuncMenus_ProgF.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="853" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="constantes.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -50,9 +43,14 @@
 			<Cursor1 position="260" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="STRUCTS_PF.h" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1580" topLine="28" />
+			<Cursor1 position="919" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="FuncAux_ProgF.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="262" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

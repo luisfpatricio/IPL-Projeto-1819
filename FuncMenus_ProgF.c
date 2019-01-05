@@ -56,7 +56,7 @@ int menuBicicletas(int *qtdBicicletas, int *qtdEmprestimos, float *qtdDistanciaP
 }
 
 // Menu Utentes
-int menuUtentes()
+int menuUtentes(int* qtdEmprestimos, int* qtdAvarias, int* qtdDistanciaPercorrida)
 {
     int opcao;
 

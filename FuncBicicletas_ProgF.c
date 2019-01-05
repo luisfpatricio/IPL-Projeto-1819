@@ -4,7 +4,7 @@
 #include "FuncAux_ProgF.h"
 #include "STRUCTS_PF.h"
 
-//Funcoes Bicicletas
+// Funcoes Bicicletas
 
 // Inserir Bicicleta
 void inserirBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBicicletas)
@@ -39,13 +39,13 @@ void inserirBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBi
 }
 
 // Procurar Bicicleta
-int procuraBicicleta(tipoBicicleta vetorBicicleta[MAX_BICICLETAS], int qtdBicicletas, char designacao[MAX_STRING])
+int procuraBicicleta(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBicicletas, char designacao[MAX_STRING])
 {
     int i, existeBicicleta = -1; // -1 caso nao exista bicicleta
 
     for (i=0; i < qtdBicicletas; i++)
     {
-        if(strcmp(vetorBicicleta[i].designacao,designacao) == 0)
+        if(strcmp(vetorBicicletas[i].designacao,designacao) == 0)
         {
             existeBicicleta = i;
             i = qtdBicicletas;
@@ -75,7 +75,6 @@ void ordenarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBic
         }
     }
 }
-
 
 // Listar Bicicletas
 void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBicicletas)
@@ -144,7 +143,6 @@ void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBic
 }
 
 // Consultar Bicicletas
-
 void consultarBicicleta(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBicicletas)
 {
     int posicao;
@@ -166,7 +164,7 @@ void consultarBicicleta(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdB
         }
         else
         {
-            // Teste Ver posicao
+            // Teste Ver o valor da posicao
             /*
             printf("\nPosicao: %d", posicao);
             pausa();

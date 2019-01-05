@@ -19,12 +19,13 @@ int main()
 {
     int opcaoMenuPrincipal, opcaoMenuBicicletas, opcaoMenuUtentes, opcaoMenuEmprestimos, opcaoMenuListaEspera, opcaoMenuFicheiros;
     //contadores
-    int qtdBicicletas=0, qtdUtentes=0, qtdEmprestimos=0, qtdListaEspera=0;
+    int qtdBicicletas=0, qtdUtentes=0, qtdEmprestimos=0, qtdListaEspera=0, qtdAvarias=0;
     float qtdDistanciaPercorrida = 0.0;
     char compString[MAX_STRING];
 
     //Declarar variavel "Tipo estrutura"
     tipoBicicleta vetorBicicletas[MAX_BICICLETAS];
+    tipoUtente vetorUtentes[MAX_UTENTES];
 
     // Chama Menu Principal
     do
@@ -79,7 +80,41 @@ int main()
             //Menu Utentes
             do
             {
-                opcaoMenuUtentes = menuUtentes();
+                opcaoMenuUtentes = menuUtentes(&qtdEmprestimos, &qtdAvarias, &qtdDistanciaPercorrida);
+
+                switch(opcaoMenuUtentes)
+                {
+                case 1:
+                    // Inserir Utente
+                    inserirUtente(vetorUtentes, &qtdUtentes);
+                    break;
+
+                case 2:
+                    // Alterar Utente
+
+                    break;
+
+                case 3:
+                    //Consultar Utente
+                    consultarUtente(vetorUtentes, &qtdUtentes);
+                    break;
+
+                case 4:
+                    // Listar Utentes
+                    listarUtentes(vetorUtentes, &qtdUtentes);
+                    break;
+
+                case 5:
+                    // Eliminar Utente
+
+                    break;
+
+
+
+                }
+
+
+
             }
             while(opcaoMenuUtentes != 0);
             break;

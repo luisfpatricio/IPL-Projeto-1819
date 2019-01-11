@@ -27,11 +27,9 @@ typedef struct{
 //Estrutura Emprestimo
 typedef struct{
     int numeroRegisto;
-    //char codigoUtente[10];
-    //tipoUtente
-    //char designacaoBicicleta[10];
-    char campusOrigem[12];
-    char campusDestino[12];
+    char designacaoBicicleta[MAX_STRING];
+    int campusOrigem;
+    int campusDestino;
     tipoData instanteR;
     tipoDevolucaoEmprestimo dadosdevolvidos;
 }tipoEmprestimo;

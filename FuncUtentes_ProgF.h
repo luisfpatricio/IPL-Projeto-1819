@@ -8,7 +8,9 @@
 void inserirUtente(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes);                      // Inserir Utente
 int procuraUtente(tipoUtente vetorUtentes[MAX_UTENTES], int qtdUtentes, int codigo);            // Procurar Utente
 void ordenarUtentes(tipoUtente vetorUtentes[MAX_UTENTES], int qtdUtentes);                      // Ordenar Vetor Utentes Metodo Borbulhamento (Inteiro)
-void listarUtentes(tipoUtente vetorUtentes[MAX_UTENTES], int qtdUtentes);                      // Listar Utentes
+void listarUtentes(tipoUtente vetorUtentes[MAX_UTENTES], int qtdUtentes);                       // Listar Utentes
 void consultarUtente(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes);                    // Consultar Utente
+void alterarUtente(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes);                      // Alterar Utente
+
 
 #endif // CONSTANTES_H_INCLUDED

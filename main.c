@@ -91,6 +91,7 @@ int main()
 
                 case 2:
                     // Alterar Utente
+                    alterarUtente(vetorUtentes, &qtdUtentes);
 
                     break;
 

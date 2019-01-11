@@ -19,13 +19,13 @@ void inserirUtente(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes)
     {
         do
         {
-            vetorUtentes[*qtdUtentes].codigo = lerInteiro("\nCodigo: ", 0, 99999);
+            vetorUtentes[*qtdUtentes].codigo = lerInteiro("\nCodigo: ", 0, MAX_CODIGO_UTENTE);
             posicao = procuraUtente(vetorUtentes, *qtdUtentes, vetorUtentes[*qtdUtentes].codigo);
 
             if(posicao == -1)
             {
                 lerString("\nNome: ", vetorUtentes[*qtdUtentes].nome,MAX_STRING);
-                vetorUtentes[*qtdUtentes].telefone = lerInteiro("\nTelefone: ", 000000000,999999999);
+                vetorUtentes[*qtdUtentes].telefone = lerInteiro("\nTelefone: ", 0,MAX_TELEFONE);
                 vetorUtentes[*qtdUtentes].tipo = lerInteiro("\nInsirta o Tipo:\n\t1 - Estudante\n\t2 - Docente\n\t3 - Tecnico Administrativo\n\t4 - Convidado\n\tInsira a opcao: ", 1,4);
                 (*qtdUtentes)++;
             }
@@ -125,7 +125,7 @@ void listarUtentes(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes)
     pausa();
 }
 
-// Consultar Utente
+//  Consultar Utente
 void consultarUtente(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes)
 {
     int posicao, comparaCodigo=0;
@@ -136,8 +136,8 @@ void consultarUtente(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes)
     }
     else
     {
-        printf("\n\t\tConsultar Utente\n");
-        comparaCodigo = lerInteiro("\nCodigo: ",0, 999999);
+        printf("\n\t\tAlterar Utente\n");
+        comparaCodigo = lerInteiro("\nCodigo: ",0, MAX_CODIGO_UTENTE);
         posicao = procuraUtente(vetorUtentes, *qtdUtentes, comparaCodigo);
 
         if(posicao == -1)
@@ -187,7 +187,46 @@ void consultarUtente(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes)
 }
 
 // Alterar Utente
+void alterarUtente(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes)
+{
+    int posicaoAlterar, posicaoPesquisa, comparaCodigo=0;
 
+    if(*qtdUtentes == 0)
+    {
+        printf("\nNao Existem Utentes inseridos!\n\n");
+    }
+    else
+    {
+        printf("\n\t\tConsultar Utente\n");
+        comparaCodigo = lerInteiro("\nCodigo: ",0, MAX_CODIGO_UTENTE);
+        posicaoAlterar = procuraUtente(vetorUtentes, *qtdUtentes, comparaCodigo);
 
+        if(posicaoAlterar == -1)
+        {
+            printf("\nCodigo nao encontrado!\n");
+        }
+        else
+        {
+            do
+            {
+                vetorUtentes[posicaoAlterar].codigo = lerInteiro("\nCodigo: ", 0, MAX_CODIGO_UTENTE);
+                posicaoPesquisa = procuraUtente(vetorUtentes, *qtdUtentes, vetorUtentes[*qtdUtentes].codigo);
+
+                if(posicaoPesquisa == -1)
+                {
+                    lerString("\nNome: ", vetorUtentes[posicaoAlterar].nome,MAX_STRING);
+                    vetorUtentes[posicaoAlterar].telefone = lerInteiro("\nTelefone: ", 0,MAX_TELEFONE);
+                    vetorUtentes[posicaoAlterar].tipo = lerInteiro("\nInsirta o Tipo:\n\t1 - Estudante\n\t2 - Docente\n\t3 - Tecnico Administrativo\n\t4 - Convidado\n\tInsira a opcao: ", 1,4);
+                }
+                else
+                {
+                    printf("\nAtencao: O Codigo Ja Existe\n");
+                }
+            }
+            while(posicaoPesquisa != -1);
+        }
+    }
+    pausa();
+}
 
 // Eliminar Utente

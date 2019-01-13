@@ -54,6 +54,22 @@ int procuraBicicleta(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBicic
     return existeBicicleta;
 }
 
+// Procura Campus da Bicicleta
+int procuraBicicletaCampus(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBicicletas, int campus)
+{
+    int i, existeCampus = -1; // -1 caso nao exista utente
+
+    for (i=0; i < qtdBicicletas; i++)
+    {
+        if(vetorBicicletas[i].campus == campus)
+        {
+            existeCampus = i;
+            i = qtdBicicletas;
+        }
+    }
+    return existeCampus;
+}
+
 // Ordenar Bicicletas Metodo do Borbulhamento STRING
 void ordenarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBicicletas)
 {
@@ -137,6 +153,7 @@ void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBic
                     }
                 }
             }
+            barra();
         }
     }
     pausa();

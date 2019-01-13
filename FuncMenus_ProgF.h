@@ -7,7 +7,8 @@
 int menuPrincipal(int* qtdUtentes, int* qtdEmprestimos, float* qtdDistanciaPercorrida, int* qtdListaEspera);
 int menuBicicletas(int* qtdBicicletas, int* qtdEmprestimos, float* qtdDistanciaPercorrida);
 int menuUtentes(int* qtdEmprestimos, int* qtdAvarias, int* qtdDistanciaPercorrida);
-int menuEmprestimos(void);
+int menuEmprestimos(int* qtdEmprestimos, int* qtdListaEspera);
+int menuListaEspera(int* qtdListaEspera);
 int menuEstatisticas(void);
 int menuFicheiros(void);
 

@@ -27,19 +27,18 @@ typedef struct{
 //Estrutura Emprestimo
 typedef struct{
     int numeroRegisto;
+    int codigoUtente;
     char designacaoBicicleta[MAX_STRING];
     int campusOrigem;
     int campusDestino;
-    tipoData instanteR;
-    tipoDevolucaoEmprestimo dadosdevolvidos;
+    tipoData instanteEmprestimo;
+    tipoDevolucaoEmprestimo dadosDevolvidos;
 }tipoEmprestimo;
 
 //Estrutura Bicicleta
 typedef struct{
     char designacao[MAX_STRING];
     char modelo[MAX_STRING];
-    //char estado[MAX_STRING];
-    //char campus[MAX_STRING];
     int estado;
     int campus;
 
@@ -50,7 +49,6 @@ typedef struct{
     int codigo;
     char nome[MAX_STRING];
     int telefone;
-    //char tipo[MAX_STRING];
     int tipo;
     tipoEmprestimo emprestimo;
 }tipoUtente;

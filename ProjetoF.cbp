@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="FuncBicicletas_ProgF.h" />
+		<Unit filename="FuncEmprestimos_ProgF.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="FuncEmprestimos_ProgF.h" />
 		<Unit filename="FuncMenus_ProgF.c">
 			<Option compilerVar="CC" />
 		</Unit>

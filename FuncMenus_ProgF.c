@@ -42,15 +42,15 @@ int menuBicicletas(int *qtdBicicletas, int *qtdEmprestimos, float *qtdDistanciaP
     printf("\n************************** Menu Bicicletas **************************\n\n");
     printf("\nQuantidade de Bicicletas: %d\n", *qtdBicicletas);
     printf("Quantidade de Emprestimos: %d\n", *qtdEmprestimos);
-    printf("Distancia Total Percorrida: %.3f\n\n");
+    printf("Distancia Total Percorrida: %.3f\n\n", *qtdDistanciaPercorrida);
     printf("\t 1 - Adicionar Bicicleta\n");
     printf("\t 2 - Consultar Bicicletas\n");
     printf("\t 3 - Listar Bicicletas\n");
-    //printf("\t 4 - Eliminar Bicicleta\n");
-    //printf("\t 5 - Alterar Destino da Bicicleta\n");
+    printf("\t 4 - Eliminar Bicicleta\n");
+    printf("\t 5 - Alterar Destino da Bicicleta\n");
     printf("\n 0 - Sair \n\n");
 
-    opcao = lerInteiro("\n\t\tIndique a opcao:", 0, 3);
+    opcao = lerInteiro("\n\t\tIndique a opcao:", 0, 5);
 
     return opcao;
 }
@@ -62,9 +62,9 @@ int menuUtentes(int* qtdEmprestimos, int* qtdAvarias, int* qtdDistanciaPercorrid
 
     //system("cls");
     printf("\n************************** Menu Utentes **************************\n\n");
-    printf("Quantidade de Emprestimos: %d\n");
-    printf("Quantidade de Avarias: %d\n");
-    printf("Distancia Total Percorrida: %.3f\n\n");
+    printf("Quantidade de Emprestimos: %d\n", *qtdEmprestimos);
+    printf("Quantidade de Avarias: %d\n", *qtdAvarias);
+    printf("Distancia Total Percorrida: %.3f\n\n", *qtdDistanciaPercorrida);
     printf("\t 1 - Adicionar Utente\n");
     printf("\t 2 - Alterar Utente\n");
     printf("\t 3 - Consultar Utentes\n");
@@ -78,12 +78,14 @@ int menuUtentes(int* qtdEmprestimos, int* qtdAvarias, int* qtdDistanciaPercorrid
 }
 
 // Menu Emprestimos
-int menuEmprestimos()
+int menuEmprestimos(int* qtdEmprestimos, int* qtdListaEspera)
 {
     int opcao;
 
     //system("cls");
     printf("\n************************** Menu Emprestimos **************************\n\n");
+    printf("Quantidade de Emprestimos: %d\n", *qtdEmprestimos);
+    printf("Quantidade de Lista de Espera: %d\n", *qtdListaEspera);
     printf("\t 1 - Registar Emprestimo\n");
     printf("\t 2 - Consultar Emprestimo\n");
     printf("\t 3 - Listar Emprestimos\n");
@@ -96,9 +98,13 @@ int menuEmprestimos()
     return opcao;
 }
 
-// Menu Estatisticas
-int menuEstatisticas()
+// Menu Lista de Espera
+int menuListaEspera(int* qtdListaEspera)
 {
+    printf("\n************************** Menu Lista de Espera **************************\n\n");
+    printf("\nQuantidade de Lista de Espera: %d", *qtdListaEspera);
+
+
 
 }
 // Menu Ficheiros

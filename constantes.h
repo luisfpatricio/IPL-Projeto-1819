@@ -9,8 +9,11 @@
 #define MAX_CODIGO_UTENTE 999999999
 #define MAX_TELEFONE 999999999
 
+
 #define MAX_ESTUDANTES 100
 
+#define MAX_EMPRESTIMOS 100 // Temporario
+#define MAX_ID_EMPRESTIMOS 99999 // Temporario
 
 
 #endif // CONSTANTES_H_INCLUDED

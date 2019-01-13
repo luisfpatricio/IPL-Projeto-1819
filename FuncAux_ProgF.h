@@ -10,6 +10,9 @@ void lerString(char mensagem[MAX_STRING], char vetorCaracteres[MAX_STRING], int 
 tipoData lerData(void);
 void limpaBufferStdin(void);
 void pausa();
+void barra();
+void limpaEcra();
+
 
 //tipoData lerData(void);
 

@@ -120,6 +120,7 @@ void listarUtentes(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes)
                     }
                 }
             }
+            barra();
         }
     }
     pausa();
@@ -136,7 +137,7 @@ void consultarUtente(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes)
     }
     else
     {
-        printf("\n\t\tAlterar Utente\n");
+        printf("\n\t\Consultar Utente\n");
         comparaCodigo = lerInteiro("\nCodigo: ",0, MAX_CODIGO_UTENTE);
         posicao = procuraUtente(vetorUtentes, *qtdUtentes, comparaCodigo);
 

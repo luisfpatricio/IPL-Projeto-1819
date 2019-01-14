@@ -99,7 +99,7 @@ tipoData lerData(void)
     tipoData data;
     int maxDiasMes;
 
-    data.ano = lerInteiro(" ano", 2014, 2018);
+    data.ano = lerInteiro(" ano", 2014, 2019);
     data.mes = lerInteiro(" mes", 1, 12);
 
     switch (data.mes)
@@ -126,10 +126,12 @@ tipoData lerData(void)
 
     data.dia = lerInteiro(" dia:", 1, maxDiasMes);
 
+    data.hora = lerInteiro(" horas", 0, 23);
+    data.minuto = lerInteiro(" minutos", 0, 59);
+
 
     return data;
 }
-
 
 
 void limpaBufferStdin(void)
@@ -140,4 +142,31 @@ void limpaBufferStdin(void)
         chr = getchar();
     }
     while (chr != '\n' && chr != EOF);
+}
+
+void pausa()
+{
+    printf("\n\n (Prima ENTER para continuar...)");
+    getchar();
+}
+
+void barra()
+{
+    int i;
+
+    printf("\n");
+    for (i = 0; i < 70; i++)
+    {
+        printf("-");
+    }
+}
+
+void limpaEcra()
+{
+    int i;
+
+    for (i = 0; i < 50; i++)
+    {
+        printf("\n");
+    }
 }

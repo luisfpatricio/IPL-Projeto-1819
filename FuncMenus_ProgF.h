@@ -6,8 +6,9 @@
 //Menus e SubMenus
 int menuPrincipal(int* qtdUtentes, int* qtdEmprestimos, float* qtdDistanciaPercorrida, int* qtdListaEspera);
 int menuBicicletas(int* qtdBicicletas, int* qtdEmprestimos, float* qtdDistanciaPercorrida);
-int menuUtentes(void);
-int menuEmprestimos(void);
+int menuUtentes(int* qtdEmprestimos, int* qtdAvarias, int* qtdDistanciaPercorrida);
+int menuEmprestimos(int* qtdEmprestimos, int* qtdListaEspera);
+int menuListaEspera(int* qtdListaEspera);
 int menuEstatisticas(void);
 int menuFicheiros(void);
 

@@ -4,18 +4,21 @@
 #include "FuncAux_ProgF.h"
 #include "STRUCTS_PF.h"
 
-//Funcoes Bicicletas
+// Funcoes Bicicletas
 
 // Inserir Bicicleta
 void inserirBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBicicletas)
 {
     int posicao;
 
-    if(*qtdBicicletas < MAX_BICICLETAS)
+    if(*qtdBicicletas == MAX_BICICLETAS)
+    {
+        printf("\nAtencao: Antigimos a quantidade maxima de Bicicletas\n");
+    }
+    else
     {
         do
         {
-            printf("\n\n");
             lerString("\nDesignacao: ", vetorBicicletas[*qtdBicicletas].designacao,MAX_STRING);
             posicao = procuraBicicleta(vetorBicicletas, *qtdBicicletas, vetorBicicletas[*qtdBicicletas].designacao);
 
@@ -33,26 +36,38 @@ void inserirBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBi
         }
         while(posicao != -1);
     }
-    else
-    {
-        printf("\nAtencao: Antigimos o numero maximo de Bicicletas\n");
-    }
 }
 
 // Procurar Bicicleta
-int procuraBicicleta(tipoBicicleta vetorBicicleta[MAX_BICICLETAS], int qtdBicicletas, char designacao[MAX_STRING])
+int procuraBicicleta(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBicicletas, char designacao[MAX_STRING])
 {
     int i, existeBicicleta = -1; // -1 caso nao exista bicicleta
 
     for (i=0; i < qtdBicicletas; i++)
     {
-        if(strcmp(vetorBicicleta[i].designacao,designacao) == 0)
+        if(strcmp(vetorBicicletas[i].designacao,designacao) == 0)
         {
             existeBicicleta = i;
             i = qtdBicicletas;
         }
     }
     return existeBicicleta;
+}
+
+// Procura Campus da Bicicleta
+int procuraBicicletaCampus(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBicicletas, int campus)
+{
+    int i, existeCampus = -1; // -1 caso nao exista utente
+
+    for (i=0; i < qtdBicicletas; i++)
+    {
+        if(vetorBicicletas[i].campus == campus)
+        {
+            existeCampus = i;
+            i = qtdBicicletas;
+        }
+    }
+    return existeCampus;
 }
 
 // Ordenar Bicicletas Metodo do Borbulhamento STRING
@@ -77,121 +92,108 @@ void ordenarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBic
     }
 }
 
-
 // Listar Bicicletas
-void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int qtdBicicletas)
+void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBicicletas)
 {
     int i;
+    int a;
 
-    if(qtdBicicletas == 0)
+    if(*qtdBicicletas == 0)
     {
         printf("\n\nNao Existem Bicicletas Inseridas\n");
     }
     else
     {
-        printf("\n\n---------- Lista de todas as Bicicletas -----------\n\n");
-        for(i=0; i<qtdBicicletas; i++);
+        for( a = 0; a < *qtdBicicletas; a++ )
         {
-            printf("\nDesignacao: %s", vetorBicicletas[i].designacao);
-            printf("\nModelo: %s", vetorBicicletas[i].modelo);
-            printf("\nEstado: %d", vetorBicicletas[i].estado);
-            printf("\nCampus: %d", vetorBicicletas[i].campus);
+            printf("\n\nBicicleta[%d]", a);
+            printf("\n\tDesignacao: %s", vetorBicicletas[a].designacao);
+            printf("\n\tModelo: %s", vetorBicicletas[a].modelo);
+            //printf("\n\tEstado: %d", vetorBicicletas[a].estado);
+            //printf("\n\tCampus: %d", vetorBicicletas[a].campus);
 
-            /*
-            if(vetorBicicletas[i].estado == 1)
+            // ESTADO
+            printf("\n\tEstado: ");
+            if(vetorBicicletas[a].estado == 1)
             {
-                printf(" - Disponivel");
+                printf("1 - Disponivel");
             }
             else
             {
-                if(vetorBicicletas[i].estado == 2)
+                if(vetorBicicletas[a].estado == 2)
                 {
-                    printf(" - Emprestada");
+                    printf("2 - Emprestada");
                 }
                 else
                 {
-                    printf(" - Avariada");
+                    printf("3 - Avariada");
                 }
             }
-            printf("\Modelo: %d", vetorBicicletas[i].modelo);
-            if(vetorBicicletas[i].modelo == 1)
+            //Campus
+            printf("\n\tCampus: ");
+            if(vetorBicicletas[a].campus == 1)
             {
-                printf(" - Residencias");
+                printf("1 - Residencias");
             }
             else
             {
-                if(vetorBicicletas[i].modelo == 2)
+                if(vetorBicicletas[a].campus == 2)
                 {
-                    printf(" - Campus1");
+                    printf("2 - Campus1");
                 }
                 else
                 {
-                    if(vetorBicicletas[i].modelo == 3)
+                    if(vetorBicicletas[a].campus == 3)
                     {
-                        printf(" - Campus2");
+                        printf("3 - Campus2");
                     }
                     else
                     {
-                        printf(" - Campus5");
+                        printf("4 - Campus5");
                     }
                 }
             }
-        */
+            barra();
         }
     }
+    pausa();
 }
 
-/*
-// EscreveDadosBicicletas
-void escreveDadosBicicletas(tipoBicicleta vetorBicicletas)
+// Consultar Bicicletas
+void consultarBicicleta(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBicicletas)
 {
-int i;
+    int posicao;
+    char comparaDesignacao[MAX_STRING];
 
-printf("\nDesignacao: %s", vetorBicicletas[i].designacao);
-printf("\nModelo: %s", vetorBicicletas[i].modelo);
-printf("\nEstado: %d", vetorBicicletas[i].estado);
-if(vetorBicicletas[i].estado == 1)
-{
-printf(" - Disponivel");
-}
-else
-{
-if(vetorBicicletas[i].estado == 2)
-{
-printf(" - Emprestada");
-}
-else
-{
-printf(" - Avariada");
-}
-}
-printf("\Modelo: %d", vetorBicicletas[i].modelo);
-if(vetorBicicletas[i].modelo == 1)
-{
-printf(" - Residencias");
-}
-else
-{
-if(vetorBicicletas[i].modelo == 2)
-{
-printf(" - Campus1");
-}
-else
-{
-if(vetorBicicletas[i].modelo == 3)
-{
-    printf(" - Campus2");
-}
-else
-{
-    printf(" - Campus5");
-}
-}
-}
-}
-*/
+    if(*qtdBicicletas == 0)
+    {
+        printf("\nNao Existem Bicicletas inseridas!\n\n");
+    }
+    else
+    {
+        printf("\n\t\t\tConsultar Bicicletas\n");
+        lerString("\nDesignacao: ", comparaDesignacao,MAX_STRING);
+        posicao = procuraBicicleta(vetorBicicletas, *qtdBicicletas, comparaDesignacao);
 
+        if(posicao == -1)
+        {
+            printf("\nDesignacao nao encontrada!\n");
+        }
+        else
+        {
+            // Teste Ver o valor da posicao
+            /*
+            printf("\nPosicao: %d", posicao);
+            pausa();
+            */
+            printf("\n\nBicicleta[%d]", posicao);
+            printf("\n\tDesignacao: %s", vetorBicicletas[posicao].designacao);
+            printf("\n\tModelo: %s", vetorBicicletas[posicao].modelo);
+            printf("\n\tEstado: %d", vetorBicicletas[posicao].estado);
+            printf("\n\tCampus: %d", vetorBicicletas[posicao].campus);
+        }
+    }
+    pausa();
+}
 
 // Eliminar Bicicletas
-
-

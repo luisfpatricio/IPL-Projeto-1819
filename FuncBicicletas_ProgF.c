@@ -153,6 +153,10 @@ void listarBicicletas(tipoBicicleta vetorBicicletas[MAX_BICICLETAS], int *qtdBic
                     }
                 }
             }
+            printf("\n\tQuantidade de Emprestimos: %d", vetorBicicletas[a].contaEmprestimos);
+            printf("\n\tQuantidade de Avarias: %d", vetorBicicletas[a].contaAvarias);
+            printf("\n\tDistancia Total Percorrida: %.3f", vetorBicicletas[a].contaDistancia);
+
             barra();
         }
     }

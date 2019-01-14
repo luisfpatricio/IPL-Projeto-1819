@@ -120,6 +120,8 @@ void listarUtentes(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes)
                     }
                 }
             }
+            printf("\n\tQuantidade de Emprestimos: %d", vetorUtentes[a].contaEmprestimos);
+            printf("\n\tDistancia Total Percorrida: %.3f", vetorUtentes[a].contaDistancia);
             barra();
         }
     }

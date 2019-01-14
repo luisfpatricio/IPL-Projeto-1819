@@ -134,6 +134,33 @@ tipoData lerData(void)
 }
 
 
+void iniciaZeros(tipoBicicleta vetorBicicleta[MAX_BICICLETAS], tipoUtente vetorUtente[MAX_UTENTES])
+{
+    int i, a;
+
+    for(i=0; i<MAX_BICICLETAS; i++)
+    {
+        vetorBicicleta[i].contaEmprestimos=0;
+        vetorBicicleta[i].contaAvarias=0;
+        vetorBicicleta[i].contaDistancia=0.0;
+    }
+
+    for(a=0; a<MAX_UTENTES; a++)
+    {
+        vetorUtente[a].contaEmprestimos=0;
+        vetorUtente[a].contaDistancia=0.0;
+    }
+
+    //vetorEmprestimos = NULL;
+}
+
+/*
+void libertaMemoria(void)
+{
+    free(vetorEmprestimos);
+}
+*/
+
 void limpaBufferStdin(void)
 {
     char chr;

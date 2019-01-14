@@ -43,6 +43,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="FuncEmprestimos_ProgF.h" />
+		<Unit filename="FuncFicheiros_ProgF.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="FuncFicheiros_ProgF.h" />
 		<Unit filename="FuncMenus_ProgF.c">
 			<Option compilerVar="CC" />
 		</Unit>

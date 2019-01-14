@@ -142,115 +142,14 @@ tipoEmprestimo *inserirEmprestimo(tipoEmprestimo *vetorEmprestimos, int *qtdEmpr
     }
     else
     {
-
         printf("\nNumero de Registo: %d", temporario.numeroRegisto);
         temporario.instanteEmprestimo = lerData();
         temporario.numeroRegisto = *qtdEmprestimos;
 
         vetorEmprestimos[*qtdEmprestimos] = temporario;
-
     }
     return vetorEmprestimos;
 }
-
-/*
-
-if(*qtdEmprestimos == MAX_EMPRESTIMOS)
-{
-    printf("\nAtencao: Antigimos a quantidade maxima de Emprestimos\n");
-}
-else
-{
-    if(*qtdBicicletas == 0 || *qtdUtentes == 0)
-    {
-        //printf("\nNao existe Bicicletas [%d] ou Utentes [%d] inseridos\n\n", *qtdBicicletas, *qtdUtentes);
-        printf("\nQuantidade Bicicletas: %d\nQuantidade Utentes: %d", *qtdBicicletas, *qtdUtentes);
-        if(*qtdBicicletas == 0)
-        {
-            printf("\n\nNao Existem Bicicletas Inseridas");
-        }
-        if(*qtdUtentes == 0)
-        {
-            printf("\nNao Existem Utentes Inseridos");
-        }
-        pausa();
-    }
-    else
-    {
-        do
-        {
-            vetorEmprestimo[*qtdEmprestimos].numeroRegisto = numID+1;
-            posicaoEmprestimo = procuraEmprestimo(vetorEmprestimo, *qtdEmprestimos, vetorEmprestimo[*qtdEmprestimos].numeroRegisto);
-            printf("\n\nPosicaoEmprestimo = %d", posicaoEmprestimo);
-            printf("\nNumero de Registo: %d", vetorEmprestimo[posicaoEmprestimo].numeroRegisto);
-            printf("\n\n*qtdEmprestimo = %d", *qtdEmprestimos);
-            printf("\nNumero de Registo: %d", vetorEmprestimo[*qtdEmprestimos].numeroRegisto);
-
-            if(posicaoEmprestimo != -1)
-            {
-                printf("\nERRO: O Numero de Registo Ja Existe\n");
-            }
-            else
-            {
-                do
-                {
-                    vetorEmprestimo[*qtdEmprestimos].codigoUtente = lerInteiro("\nCodigo do Utente: ", 0, MAX_CODIGO_UTENTE);
-                    posicaoUtente = procuraUtente(vetorUtentes, *qtdUtentes, vetorEmprestimo[*qtdEmprestimos].codigoUtente);
-
-                    if(posicaoUtente==-1)
-                    {
-                        printf("\nAtencao: O Codigo do Utente Nao foi Encontrado\n");
-                        pausa();
-                    }
-                    else
-                    {
-                        do
-                        {
-                            lerString("\nDesignacao da Bicicleta: ", vetorEmprestimo[*qtdEmprestimos].designacaoBicicleta, MAX_STRING);
-                            posicaoBicicleta = procuraBicicleta(vetorBicicletas, *qtdBicicletas, vetorEmprestimo[*qtdEmprestimos].designacaoBicicleta);
-
-                            if(posicaoBicicleta==-1)
-                            {
-                                printf("\nAtencao: A Designacao da Bicicleta Nao foi Encontrada\n");
-                                pausa();
-                            }
-                            else
-                            {
-                                vetorEmprestimo[*qtdEmprestimos].instanteEmprestimo = lerData();
-                                vetorEmprestimo[*qtdEmprestimos].campusOrigem = lerInteiro("\nInsira o Campus de Origem:\n\t1 - Residencias\n\t2 - Campus1\n\t3 - Campus2\n\t4 - Campus5\n\tInsira a opcao: ", 1, 4);
-                                vetorEmprestimo[*qtdEmprestimos].campusDestino = lerInteiro("\nInsira o Campus de Destino:\n\t1 - Residencias\n\t2 - Campus1\n\t3 - Campus2\n\t4 - Campus5\n\tInsira a opcao: ", 1, 4);
-
-                                // validações se existe bike disponivel!!! neste campus
-                                posicaoCampus = procuraBicicletaCampus(vetorBicicletas, *qtdBicicletas, vetorEmprestimo[*qtdEmprestimos].campusOrigem);
-
-                                if(posicaoCampus==-1)
-                                {
-                                    (*qtdListaEspera)++;
-                                    printf("\nAtencao: Nao existe Bicicletas neste Campus Disponiveis");
-                                    printf("\nIra ter que aguardar na nossa Lista de Espera [%d]\n", *qtdListaEspera);
-
-                                    tipoEmprestimo vetorEmprestimo[]
-                                }
-                                else
-                                {
-                                    (*qtdEmprestimos)++;
-                                    printf("\nRegisto Efectuado com Sucesso\n\n");
-                                }
-
-                            }
-                        }
-                        while(posicaoBicicleta==-1);
-                    }
-                }
-                while(posicaoUtente==-1);
-            }
-        }
-        while(posicaoEmprestimo != -1);
-    }
-}
-pausa();
-}
-*/
 
 
 // Procurar Emprestimo

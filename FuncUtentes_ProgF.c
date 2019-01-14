@@ -184,6 +184,8 @@ void consultarUtente(tipoUtente vetorUtentes[MAX_UTENTES], int* qtdUtentes)
                     }
                 }
             }
+            printf("\n\tQuantidade de Emprestimos: %d", vetorUtentes[posicao].contaEmprestimos);
+            printf("\n\tDistancia Total Percorrida: %.3f", vetorUtentes[posicao].contaDistancia);
         }
     }
     pausa();

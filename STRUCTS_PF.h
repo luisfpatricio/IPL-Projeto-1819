@@ -33,6 +33,8 @@ typedef struct{
     int campusDestino;                          // Campus de Destino
     tipoData instanteEmprestimo;                // Data e Hora
     tipoDevolucaoEmprestimo dadosDevolvidos;
+    int protecao;                               // 0 inativo - 1 ativo  | Verifica se foi devolvida
+    float contadistancia;                       // Contador Distancia Total Percorrida por bicicleta
 }tipoEmprestimo;
 
 //Estrutura Bicicleta
@@ -42,8 +44,7 @@ typedef struct{
     int estado;                             // Estado: 1 - Disponivel | 2 - Emprestada | 3 - Avariada
     int campus;                             // Campus: 1 - Residencias | 2 - Campus1 | 3 - Campus2 | 4 - Campus5
     int contaEmprestimos, contaAvarias;     // Contador de Emprestimos / Avarias por bicicleta
-    float contaDistancia;                    // Contador Distancia Total Percorrida por bicicleta
-
+    float contaDistancia;                   // Contador Distancia Total Percorrida por bicicleta
 }tipoBicicleta;
 
 //Estrutura Utente
@@ -54,6 +55,7 @@ typedef struct{
     int tipo;                               // Tipo de Utente: 1 - Estudante 2 - Docente 3 - Tecnico Administrativo 4 - Convidado
     int contaEmprestimos;                   // Contador de Emprestimos por Utente
     float contaDistancia;                   // Contador Distancia Total Percorrida por Utente
+    int protecao;                           // 0 inativo - 1 ativo  | Verifica se utiliza alguma Bicicleta
 }tipoUtente;
 
 

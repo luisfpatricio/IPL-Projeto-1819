@@ -27,18 +27,19 @@ int main()
     int codigo;
     char temporarioBike[MAX_STRING];
 
-    tipoEmprestimo temporario;
+
 
     //Declarar variavel "Tipo estrutura"
-    tipoBicicleta vetorBicicletas[MAX_BICICLETAS];
+    tipoEmprestimo temporario;                          // variavel temporaria para os Emprestimos
+    tipoBicicleta vetorBicicletas[MAX_BICICLETAS];      // Bicicletas
     tipoUtente vetorUtentes[MAX_UTENTES];
     //tipoEmprestimo vetorEmprestimos[MAX_EMPRESTIMOS];
     //tipoEmprestimo
 
     tipoEmprestimo *vetorEmprestimos;
-    vetorEmprestimos = NULL; // Inicializar vetores Dinamicos
+    vetorEmprestimos = NULL;            // Inicializar vetores Dinamicos
 
-    iniciaZeros(vetorBicicletas, vetorUtentes);
+    iniciaZeros(vetorBicicletas, vetorUtentes, vetorEmprestimos, &qtdEmprestimos);
 
     // Chama Menu Principal
     do
@@ -137,36 +138,37 @@ int main()
                     // Inserir Emprestimos
                     //inserirEmprestimo(vetorEmprestimos, &qtdEmprestimos, vetorBicicletas, &qtdBicicletas, vetorUtentes, &qtdUtentes, &qtdListaEspera);
 
-                    if(qtdEmprestimos == MAX_EMPRESTIMOS)
+                    if(qtdBicicletas == 0 || qtdUtentes == 0)
                     {
-                        printf("\nAtencao: Antigimos a quantidade maxima de Emprestimos\n");
+                        printf("\nQuantidade Bicicletas: %d\nQuantidade Utentes: %d", qtdBicicletas, qtdUtentes);
+                        if(qtdBicicletas == 0)
+                        {
+                            printf("\n\nNao Existem Bicicletas Inseridas");
+                        }
+                        if(qtdUtentes == 0)
+                        {
+                            printf("\nNao Existem Utentes Inseridos");
+                        }
+                        pausa();
                     }
                     else
                     {
-                        if(qtdBicicletas == 0 || qtdUtentes == 0)
+                        do
                         {
-                            //printf("\nNao existe Bicicletas [%d] ou Utentes [%d] inseridos\n\n", *qtdBicicletas, *qtdUtentes);
-                            printf("\nQuantidade Bicicletas: %d\nQuantidade Utentes: %d", qtdBicicletas, qtdUtentes);
-                            if(qtdBicicletas == 0)
-                            {
-                                printf("\n\nNao Existem Bicicletas Inseridas");
-                            }
-                            if(qtdUtentes == 0)
-                            {
-                                printf("\nNao Existem Utentes Inseridos");
-                            }
-                            pausa();
-                        }
-                        else
-                        {
-                            do
-                            {
-                                codigo = lerInteiro("\nCodigo do Utente: ", 0, MAX_CODIGO_UTENTE);
-                                posicaoUtente = procuraUtente(vetorUtentes, qtdUtentes, codigo);
+                            codigo = lerInteiro("\nCodigo do Utente: ", 0, MAX_CODIGO_UTENTE);
+                            posicaoUtente = procuraUtente(vetorUtentes, qtdUtentes, codigo);
 
-                                if(posicaoUtente==-1)
+                            if(posicaoUtente==-1)
+                            {
+                                printf("\nAtencao: O Codigo do Utente Nao foi Encontrado");
+                                pausa();
+                            }
+                            else
+                            {
+                                // Verificar se pode reservar bike
+                                if(vetorUtentes[posicaoUtente].protecao==1)
                                 {
-                                    printf("\nAtencao: O Codigo do Utente Nao foi Encontrado\n");
+                                    printf("\nAtencao: O Utente nao pode ter mais do que uma Bicicleta Emprestada");
                                     pausa();
                                 }
                                 else
@@ -174,10 +176,6 @@ int main()
                                     do
                                     {
                                         temporario.codigoUtente = vetorUtentes[posicaoUtente].codigo;
-
-
-
-
                                         lerString("\nDesignacao da Bicicleta: ", temporarioBike, MAX_STRING);
                                         posicaoBicicleta = procuraBicicleta(vetorBicicletas, qtdBicicletas, temporarioBike);
 
@@ -189,17 +187,14 @@ int main()
                                         else
                                         {
                                             strcpy(temporario.designacaoBicicleta, vetorBicicletas[posicaoBicicleta].designacao);
-
-
                                             temporario.campusOrigem = lerInteiro("\nInsira o Campus de Origem:\n\t1 - Residencias\n\t2 - Campus1\n\t3 - Campus2\n\t4 - Campus5\n\tInsira a opcao: ", 1, 4);
                                             temporario.campusDestino = lerInteiro("\nInsira o Campus de Destino:\n\t1 - Residencias\n\t2 - Campus1\n\t3 - Campus2\n\t4 - Campus5\n\tInsira a opcao: ", 1, 4);
 
-                                            // validações se existe bike disponivel!!! neste campus
+                                            // Verificar se existe bike no Campus de Origem
                                             posicaoCampus = procuraBicicletaCampus(vetorBicicletas, qtdBicicletas, temporario.campusOrigem);
 
                                             if(posicaoCampus==-1)
                                             {
-
                                                 (qtdListaEspera)++;
                                                 printf("\nAtencao: Nao existe Bicicletas neste Campus Disponiveis");
                                                 printf("\nIra ter que aguardar na nossa Lista de Espera [%d]\n", qtdListaEspera);
@@ -211,56 +206,23 @@ int main()
                                             else
                                             {
                                                 temporario.numeroRegisto = numID+1;
-
                                                 vetorEmprestimos=inserirEmprestimo(vetorEmprestimos, &qtdEmprestimos, temporario);
-
                                                 vetorBicicletas[posicaoBicicleta].estado = 2;
                                                 vetorBicicletas[posicaoBicicleta].contaEmprestimos++ ;
-
                                                 vetorUtentes[posicaoUtente].contaEmprestimos++;
-                                                // ver nº maximo de bikes por utente
-
-                                                // verificar o estado
+                                                vetorUtentes[posicaoUtente].protecao=1;
                                                 (qtdEmprestimos)++;
                                                 printf("\nRegisto Efectuado com Sucesso\n\n");
                                             }
-
                                         }
                                     }
                                     while(posicaoBicicleta==-1);
                                 }
                             }
-                            while(posicaoUtente==-1);
                         }
-                        pausa();
+                        while(posicaoUtente==-1);
                     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    pausa();
                     break;
 
                 case 2:
@@ -300,8 +262,19 @@ int main()
             do
             {
                 opcaoMenuFicheiros = menuFicheiros();
+
+                switch (opcaoMenuBicicletas)
+                {
+                case 1:
+                     break;
+                case 2:
+                    escreveFichBinario(vetorBicicletas,qtdBicicletas,vetorUtentes,qtdUtentes,&vetorEmprestimos,&qtdEmprestimos);
+                    break;
+
+                }
             }
-            while(opcaoMenuFicheiros != 0);
+            while(opcaoMenuBicicletas != 0);
+
             break;
         case 0:
             //Sair;

@@ -134,22 +134,30 @@ tipoData lerData(void)
 }
 
 
-void iniciaZeros(tipoBicicleta vetorBicicleta[MAX_BICICLETAS], tipoUtente vetorUtente[MAX_UTENTES])
+void iniciaZeros(tipoBicicleta vetorBicicleta[MAX_BICICLETAS], tipoUtente vetorUtente[MAX_UTENTES], tipoEmprestimo *vetorEmprestimos, int* qtdEmprestimos)
 {
-    int i, a;
+    int b, u, e;
 
-    for(i=0; i<MAX_BICICLETAS; i++)
+    for(b=0; b<MAX_BICICLETAS; b++)
     {
-        vetorBicicleta[i].contaEmprestimos=0;
-        vetorBicicleta[i].contaAvarias=0;
-        vetorBicicleta[i].contaDistancia=0.0;
+        vetorBicicleta[b].contaEmprestimos=0;
+        vetorBicicleta[b].contaAvarias=0;
+        vetorBicicleta[b].contaDistancia=0.0;
     }
 
-    for(a=0; a<MAX_UTENTES; a++)
+    for(u=0; u<MAX_UTENTES; u++)
     {
-        vetorUtente[a].contaEmprestimos=0;
-        vetorUtente[a].contaDistancia=0.0;
+        vetorUtente[u].contaEmprestimos=0;
+        vetorUtente[u].contaDistancia=0.0;
+        vetorUtente[u].protecao=0;
     }
+
+    for(e=0; e<(*qtdEmprestimos); e++)
+    {
+        vetorEmprestimos[e].contadistancia=0.0;
+        vetorEmprestimos[e].protecao=0;
+    }
+
 
     //vetorEmprestimos = NULL;
 }

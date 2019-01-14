@@ -72,7 +72,6 @@ int main()
                     //default:
 
                 }
-
             }
             while(opcaoMenuBicicletas != 0);
 

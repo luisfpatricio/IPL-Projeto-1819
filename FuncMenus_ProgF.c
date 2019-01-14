@@ -104,8 +104,6 @@ int menuListaEspera(int* qtdListaEspera)
     printf("\n************************** Menu Lista de Espera **************************\n\n");
     printf("\nQuantidade de Lista de Espera: %d", *qtdListaEspera);
 
-
-
 }
 // Menu Ficheiros
 int menuFicheiros()
@@ -113,7 +111,7 @@ int menuFicheiros()
     int opcao;
 
     //system("cls");
-    printf("\n************************** Menu Emprestimos **************************\n\n");
+    printf("\n************************** Menu Ficheiros **************************\n\n");
     printf("\t 1 - Ler do Ficheiro\n");
     printf("\t 2 - Guardar no Ficheiro\n");
     printf("\n 0 - Sair \n\n");

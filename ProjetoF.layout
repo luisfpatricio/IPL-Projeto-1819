@@ -4,71 +4,88 @@
 	<ActiveTarget name="Debug" />
 	<File name="FuncBicicletas_ProgF.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="129" topLine="0" />
+			<Cursor1 position="4771" topLine="108" />
 		</Cursor>
 		<Folding>
-			<Collapse line="42" />
-			<Collapse line="58" />
+			<Collapse line="74" />
+			<Collapse line="163" />
 		</Folding>
 	</File>
 	<File name="FuncMenus_ProgF.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="406" topLine="0" />
+			<Cursor1 position="514" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="STRUCTS_PF.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1079" topLine="22" />
+			<Cursor1 position="524" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="FuncBicicletas_ProgF.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="171" topLine="0" />
+			<Cursor1 position="4909" topLine="136" />
 		</Cursor>
 	</File>
-	<File name="constantes.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="FuncEmprestimos_ProgF.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="260" topLine="0" />
+			<Cursor1 position="353" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="FuncEmprestimos_ProgF.c" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2760" topLine="81" />
+			<Cursor1 position="4893" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="FuncAux_ProgF.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="262" topLine="0" />
+			<Cursor1 position="537" topLine="0" />
 		</Cursor>
+	</File>
+	<File name="FuncUtentes_ProgF.c" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3545" topLine="59" />
+		</Cursor>
+		<Folding>
+			<Collapse line="10" />
+			<Collapse line="130" />
+		</Folding>
 	</File>
 	<File name="FuncUtentes_ProgF.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="576" topLine="0" />
+			<Cursor1 position="821" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="FuncAux_ProgF.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3436" topLine="49" />
+			<Cursor1 position="3732" topLine="44" />
 		</Cursor>
 		<Folding>
 			<Collapse line="66" />
+			<Collapse line="97" />
+			<Collapse line="137" />
+			<Collapse line="147" />
+			<Collapse line="153" />
+			<Collapse line="164" />
 		</Folding>
 	</File>
-	<File name="FuncUtentes_ProgF.c" open="1" top="1" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="constantes.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5155" topLine="0" />
+			<Cursor1 position="394" topLine="0" />
 		</Cursor>
-		<Folding>
-			<Collapse line="10" />
-			<Collapse line="43" />
-			<Collapse line="59" />
-			<Collapse line="81" />
-			<Collapse line="129" />
-		</Folding>
+	</File>
+	<File name="FuncBicicletas_ProgF.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="223" topLine="0" />
+		</Cursor>
 	</File>
 	<File name="FuncMenus_ProgF.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1894" topLine="0" />
+			<Cursor1 position="3297" topLine="17" />
 		</Cursor>
+		<Folding>
+			<Collapse line="11" />
+			<Collapse line="37" />
+			<Collapse line="59" />
+		</Folding>
 	</File>
 </CodeBlocks_layout_file>

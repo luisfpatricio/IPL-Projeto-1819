@@ -351,3 +351,101 @@ void consultarEmprestimo(tipoEmprestimo vetorEmprestimo[MAX_EMPRESTIMOS], int* q
     pausa();
 }
 // Eliminar Emprestimo
+
+
+// Inserir Lista de Espera
+tipoEmprestimo *inserirListaEspera(tipoEmprestimo *vetorListaEspera, int* qtdListaEspera, tipoEmprestimo temporario)
+{
+    tipoEmprestimo *auxiliar;
+    auxiliar = vetorListaEspera;
+
+    vetorListaEspera = realloc(vetorListaEspera,((*qtdListaEspera)+1) *sizeof(tipoEmprestimo));
+    if (vetorListaEspera == NULL)
+    {
+        printf ("Erro ao reservar memoria");
+        vetorListaEspera = auxiliar;
+    }
+    else
+    {
+        temporario.codigoUtente=vetorListaEspera[*qtdListaEspera].codigoUtente;
+        strcpy(temporario.designacaoBicicleta, vetorListaEspera[*qtdListaEspera].designacaoBicicleta);
+        temporario.campusOrigem=vetorListaEspera[*qtdListaEspera].campusOrigem;
+        temporario.campusDestino=vetorListaEspera[*qtdListaEspera].campusDestino;
+
+        vetorListaEspera[*qtdListaEspera] = temporario;
+    }
+    return vetorListaEspera;
+}
+
+// Listar Lista de Espera
+void listarListaEspera(tipoEmprestimo vetorListaEspera[MAX_EMPRESTIMOS], int* qtdListaEspera)
+{
+    int a;
+
+    if(*qtdListaEspera == 0)
+    {
+        printf("\n\nNao Existe Utentes na Lista de Espera\n");
+    }
+    else
+    {
+        for( a = 0; a < *qtdListaEspera; a++ )
+        {
+            printf("\nLista de Espera[%d]", a);
+            printf("\n\tCodigo do Utente: %d", vetorListaEspera[a].codigoUtente);
+            printf("\n\tDesignacao da Bicicleta: %s", vetorListaEspera[a].designacaoBicicleta);
+            //printf("\n\tCampus de Origem: %d", vetorEmprestimo[a].campusOrigem);
+            //printf("\n\tCampus de Destino: %d", vetorEmprestimo[a].campusDestino);
+
+            //Campus Origem
+            printf("\n\tCampus de Origem: ");
+            if(vetorListaEspera[a].campusOrigem == 1)
+            {
+                printf("1 - Residencias");
+            }
+            else
+            {
+                if(vetorListaEspera[a].campusOrigem == 2)
+                {
+                    printf("2 - Campus1");
+                }
+                else
+                {
+                    if(vetorListaEspera[a].campusOrigem == 3)
+                    {
+                        printf("3 - Campus2");
+                    }
+                    else
+                    {
+                        printf("4 - Campus5");
+                    }
+                }
+            }
+            //Campus Destino
+            printf("\n\tCampus de Destino: ");
+            if(vetorListaEspera[a].campusDestino == 1)
+            {
+                printf("1 - Residencias");
+            }
+            else
+            {
+                if(vetorListaEspera[a].campusDestino == 2)
+                {
+                    printf("2 - Campus1");
+                }
+                else
+                {
+                    if(vetorListaEspera[a].campusDestino == 3)
+                    {
+                        printf("3 - Campus2");
+                    }
+                    else
+                    {
+                        printf("4 - Campus5");
+                    }
+                }
+            }
+            barra();
+        }
+    }
+    pausa();
+}

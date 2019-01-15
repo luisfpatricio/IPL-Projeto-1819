@@ -154,7 +154,7 @@ void iniciaZeros(tipoBicicleta vetorBicicleta[MAX_BICICLETAS], tipoUtente vetorU
 
     for(e=0; e<(*qtdEmprestimos); e++)
     {
-        vetorEmprestimos[e].contadistancia=0.0;
+        vetorEmprestimos[e].contaDistancia=0.0;
         vetorEmprestimos[e].protecao=0;
     }
 

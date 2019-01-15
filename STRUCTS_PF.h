@@ -34,7 +34,7 @@ typedef struct{
     tipoData instanteEmprestimo;                // Data e Hora
     tipoDevolucaoEmprestimo dadosDevolvidos;
     int protecao;                               // 0 inativo - 1 ativo  | Verifica se foi devolvida
-    float contadistancia;                       // Contador Distancia Total Percorrida por bicicleta
+    float contaDistancia;                       // Contador Distancia Total Percorrida por bicicleta
 }tipoEmprestimo;
 
 //Estrutura Bicicleta

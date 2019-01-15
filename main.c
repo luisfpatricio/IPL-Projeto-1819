@@ -37,7 +37,10 @@ int main()
     //tipoEmprestimo
 
     tipoEmprestimo *vetorEmprestimos;
+    tipoEmprestimo *vetorListaEspera;
+
     vetorEmprestimos = NULL;            // Inicializar vetores Dinamicos
+    vetorListaEspera = NULL;
 
     iniciaZeros(vetorBicicletas, vetorUtentes, vetorEmprestimos, &qtdEmprestimos);
 
@@ -165,7 +168,7 @@ int main()
                             }
                             else
                             {
-                                // Verificar se pode reservar bike
+                                // Verificar se o utente tem mais do que uma bike
                                 if(vetorUtentes[posicaoUtente].protecao==1)
                                 {
                                     printf("\nAtencao: O Utente nao pode ter mais do que uma Bicicleta Emprestada");
@@ -186,34 +189,69 @@ int main()
                                         }
                                         else
                                         {
-                                            strcpy(temporario.designacaoBicicleta, vetorBicicletas[posicaoBicicleta].designacao);
-                                            temporario.campusOrigem = lerInteiro("\nInsira o Campus de Origem:\n\t1 - Residencias\n\t2 - Campus1\n\t3 - Campus2\n\t4 - Campus5\n\tInsira a opcao: ", 1, 4);
-                                            temporario.campusDestino = lerInteiro("\nInsira o Campus de Destino:\n\t1 - Residencias\n\t2 - Campus1\n\t3 - Campus2\n\t4 - Campus5\n\tInsira a opcao: ", 1, 4);
-
-                                            // Verificar se existe bike no Campus de Origem
-                                            posicaoCampus = procuraBicicletaCampus(vetorBicicletas, qtdBicicletas, temporario.campusOrigem);
-
-                                            if(posicaoCampus==-1)
+                                            // Verifica se esta disponivel
+                                            if(vetorBicicletas[posicaoBicicleta].estado==1)
                                             {
-                                                (qtdListaEspera)++;
-                                                printf("\nAtencao: Nao existe Bicicletas neste Campus Disponiveis");
-                                                printf("\nIra ter que aguardar na nossa Lista de Espera [%d]\n", qtdListaEspera);
+                                                strcpy(temporario.designacaoBicicleta, vetorBicicletas[posicaoBicicleta].designacao);
+                                                temporario.campusOrigem = lerInteiro("\nInsira o Campus de Origem:\n\t1 - Residencias\n\t2 - Campus1\n\t3 - Campus2\n\t4 - Campus5\n\tInsira a opcao: ", 1, 4);
+                                                temporario.campusDestino = lerInteiro("\nInsira o Campus de Destino:\n\t1 - Residencias\n\t2 - Campus1\n\t3 - Campus2\n\t4 - Campus5\n\tInsira a opcao: ", 1, 4);
+
+                                                // Verificar se existe bike no Campus de Origem
+                                                posicaoCampus = procuraBicicletaCampus(vetorBicicletas, qtdBicicletas, temporario.campusOrigem);
+
+                                                if(posicaoCampus==-1)
+                                                {
+                                                    (qtdListaEspera)++;
+                                                    printf("\nAtencao: Nao existe Bicicletas neste Campus Disponiveis");
+                                                    printf("\nIra ter que aguardar na nossa Lista de Espera [%d]\n", qtdListaEspera);
+
+
+                                                    vetorListaEspera=inserirListaEspera(vetorEmprestimos, &qtdListaEspera, temporario);
 
 
 
-                                                //tipoEmprestimo vetorEmprestimo[]
+
+
+
+                                                    //tipoEmprestimo vetorEmprestimo[]
+                                                }
+                                                else
+                                                {
+                                                    temporario.numeroRegisto = numID+1;
+                                                    vetorEmprestimos=inserirEmprestimo(vetorEmprestimos, &qtdEmprestimos, temporario);
+                                                    vetorBicicletas[posicaoBicicleta].estado = 2;
+                                                    vetorBicicletas[posicaoBicicleta].contaEmprestimos++ ;
+                                                    vetorUtentes[posicaoUtente].contaEmprestimos++;
+                                                    vetorUtentes[posicaoUtente].protecao=1;
+                                                    (qtdEmprestimos)++;
+                                                    printf("\nRegisto Efectuado com Sucesso\n\n");
+                                                }
+
+
                                             }
                                             else
                                             {
-                                                temporario.numeroRegisto = numID+1;
-                                                vetorEmprestimos=inserirEmprestimo(vetorEmprestimos, &qtdEmprestimos, temporario);
-                                                vetorBicicletas[posicaoBicicleta].estado = 2;
-                                                vetorBicicletas[posicaoBicicleta].contaEmprestimos++ ;
-                                                vetorUtentes[posicaoUtente].contaEmprestimos++;
-                                                vetorUtentes[posicaoUtente].protecao=1;
-                                                (qtdEmprestimos)++;
-                                                printf("\nRegisto Efectuado com Sucesso\n\n");
+                                                printf("\nNao foi possivel reservar Bicicleta\nEstado da Bicicleta: %d", vetorBicicletas[posicaoBicicleta].estado);
+                                                // ESTADO
+                                                printf("\n\tEstado: ");
+                                                if(vetorBicicletas[posicaoBicicleta].estado == 1)
+                                                {
+                                                    printf("1 - Disponivel");
+                                                }
+                                                else
+                                                {
+                                                    if(vetorBicicletas[posicaoBicicleta].estado == 2)
+                                                    {
+                                                        printf("2 - Emprestada");
+                                                    }
+                                                    else
+                                                    {
+                                                        printf("3 - Avariada");
+                                                    }
+                                                }
+
                                             }
+
                                         }
                                     }
                                     while(posicaoBicicleta==-1);
@@ -237,8 +275,8 @@ int main()
                     break;
 
                 case 4:
-                    // Listar Lista de Espera0
-                    //listarListaEspera(vetorListaEspera, &qtdListaEspera);
+                    // Listar Lista de Espera
+                    listarListaEspera(vetorListaEspera, &qtdListaEspera);
                     break;
 
                 case 5:
@@ -250,30 +288,34 @@ int main()
             while(opcaoMenuEmprestimos != 0);
             break;
         case 4:
-            //Menu Lista de Espera
-            do
-            {
-                opcaoMenuListaEspera = menuListaEspera(&qtdListaEspera);
-            }
-            while(opcaoMenuListaEspera != 0);
-            break;
+        //Menu Lista de Espera
+        /*
+        do
+        {
+            opcaoMenuListaEspera = menuListaEspera(&qtdListaEspera);
+        }
+        while(opcaoMenuListaEspera != 0);
+        break;
+        */
         case 5:
             //MenuFicheiros
             do
             {
                 opcaoMenuFicheiros = menuFicheiros();
 
-                switch (opcaoMenuBicicletas)
+                switch (opcaoMenuFicheiros)
                 {
                 case 1:
-                     break;
+                    leFicheiroBinario(vetorBicicletas,qtdBicicletas,vetorUtentes,qtdUtentes,&vetorEmprestimos,&qtdEmprestimos);
+                    break;
                 case 2:
                     escreveFichBinario(vetorBicicletas,qtdBicicletas,vetorUtentes,qtdUtentes,&vetorEmprestimos,&qtdEmprestimos);
+                    //escreveFichBinarioV2();
                     break;
 
                 }
             }
-            while(opcaoMenuBicicletas != 0);
+            while(opcaoMenuFicheiros != 0);
 
             break;
         case 0:
@@ -288,6 +330,9 @@ int main()
     }
     while(opcaoMenuPrincipal != 0);
 
+
+    free(vetorEmprestimos);
+    free(vetorListaEspera);
 
     return 0;
 }

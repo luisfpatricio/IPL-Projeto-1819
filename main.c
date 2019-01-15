@@ -1,6 +1,6 @@
 /*
-    João Carreira - nº 2182317
     Luís Patrício - nº 2162357
+    João Carreira - nº 2182317
     Projecto Programação I - Gestão de Bicicletas no IPL
     ©2018-19 - Engenharia Informática - ESTG, IPLeiria
 */

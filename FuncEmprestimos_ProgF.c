@@ -5,6 +5,7 @@
 #include "STRUCTS_PF.h"
 #include "FuncBicicletas_ProgF.h"
 #include "FuncUtentes_ProgF.h"
+#include "FuncFicheiros_ProgF.h"
 
 
 // Funcoes Emprestimos

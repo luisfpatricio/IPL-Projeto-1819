@@ -3,6 +3,7 @@
 #include "FuncMenus_ProgF.h"
 #include "FuncAux_ProgF.h"
 #include "STRUCTS_PF.h"
+#include "FuncFicheiros_ProgF.h"
 
 //Funcoes Utentes
 

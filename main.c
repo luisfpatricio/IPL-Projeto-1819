@@ -12,6 +12,7 @@
 #include "FuncAux_ProgF.h"
 #include "FuncMenus_ProgF.h"
 #include "FuncBicicletas_ProgF.h"
+#include "FuncFicheiros_ProgF.h"
 
 
 
